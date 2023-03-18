@@ -1,81 +1,91 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout
+  title="Home | Daniel Berg"
+  description="Daniel Bergholz is a Senior Frontend Engineer and Content Creator"
+>
+  <main class="container">
+    <div class="introduction">
+      <img
+        src="/assets/profile_picture.jpg"
+        alt="Daniel Bergholz profile picture"
+        class="image"
+      />
+      <h1 class="title">Hello <span>&#x1F44B;</span></h1>
+    </div>
+
+    <h2 class="subtitle">
+      My name is <span class="text-underline">Daniel Bergholz</span>, I'm a
+      Senior Frontend Engineer and Content Creator from Brazil
+    </h2>
+
+    <div class="links-container">
+      <Button href="/links" title="Links" iconSrc="/assets/link.svg" />
+      <Button
+        href="mailto:bergholz.daniel@gmail.com"
+        iconSrc="/assets/email.svg"
+        title="Contact"
+        target="_blank"
+        rel="noopener"
+      />
+    </div>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .container {
+    margin: 180px auto 0 auto;
+    max-width: 60ch;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    color: #64f4ac;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-weight: 300;
+    margin: 50px 0;
+  }
+
+  .introduction {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .image {
+    border-radius: 50%;
+    width: 200px;
+  }
+
+  .links-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      margin: 100px auto 0 auto;
+    }
+
+    .subtitle {
+      margin: 40px 0;
+    }
+
+    .image {
+      width: 160px;
+    }
+
+    .introduction {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
 </style>
