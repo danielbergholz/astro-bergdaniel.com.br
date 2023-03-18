@@ -1,0 +1,68 @@
+---
+interface AnchorProps {
+  target?: string
+  rel?: string
+}
+
+export interface Props extends AnchorProps {
+  title: string
+  href: string
+  iconSrc?: string
+}
+
+const { href, title, iconSrc, ...anchorProps } = Astro.props
+---
+
+<li class="link-card">
+  <a class="anchor" href={href} {...anchorProps}>
+    {iconSrc && <img src={iconSrc} />}
+    <h2 class="text">
+      {title}
+    </h2>
+  </a>
+</li>
+
+<style>
+  .link-card {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    background-color: white;
+    background-image: none;
+    background-size: 400%;
+    border-radius: 0.6rem;
+    background-position: 100%;
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
+
+  .anchor {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1rem;
+    border-radius: 0.35rem;
+    color: #111;
+    background-color: white;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .text {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    .anchor {
+      padding: 0.7rem;
+    }
+
+    .text {
+      font-size: 1rem;
+    }
+  }
+</style>
