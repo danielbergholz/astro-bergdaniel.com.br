@@ -15,7 +15,7 @@ const { href, title, iconSrc, ...anchorProps } = Astro.props
 
 <li class="link-card">
   <a class="anchor" href={href} {...anchorProps}>
-    {iconSrc && <img src={iconSrc} />}
+    {iconSrc && <img src={iconSrc} alt="Button" />}
     <h2 class="text">
       {title}
     </h2>
