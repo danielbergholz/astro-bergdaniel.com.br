@@ -1,0 +1,48 @@
+---
+interface AnchorProps {
+  target?: string
+  rel?: string
+}
+
+export interface Props extends AnchorProps {
+  title: string
+  href: string
+  iconSrc?: string
+  backgroundColor?: string
+}
+
+const {
+  href,
+  title,
+  iconSrc,
+  backgroundColor = '#000',
+  ...anchorProps
+} = Astro.props
+---
+
+<a href={href} {...anchorProps}>
+  <button class="button">
+    {iconSrc && <img src={iconSrc} alt="Daniel Bergholz profile picture" />}
+    <h2>
+      {title}
+    </h2>
+  </button>
+</a>
+
+<style define:vars={{ backgroundColor }}>
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    width: 260px;
+    background-color: var(--backgroundColor);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 600px) {
+  }
+</style>
