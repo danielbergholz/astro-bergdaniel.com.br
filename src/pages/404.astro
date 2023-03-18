@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="404 | Daniel Berg" description="Whoops! Essa página não existe">
+  <main class="container">
+    <a href="/links" class="back">&larr;</a>
+    <h1 class="title">Whoops!</h1>
+    <h2 class="subtitle">
+      Essa página <span class="text-underline">não existe</span>
+    </h2>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #64f4ac;
+  }
+
+  .subtitle {
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .back {
+    color: #fff;
+    font-size: 2rem;
+    align-self: flex-start;
+    margin-bottom: 40px;
+  }
+</style>
