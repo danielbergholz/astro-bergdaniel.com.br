@@ -2,6 +2,7 @@
   "name": "astro-bergdaniel.com.br",
   "type": "module",
   "version": "0.0.1",
+  "license": "ISC",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.0.18"
+    "@astrojs/sitemap": "^1.2.1",
+    "astro": "^2.1.3"
   }
 }
