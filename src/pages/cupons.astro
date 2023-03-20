@@ -1,0 +1,33 @@
+---
+import Link from '../components/Link.astro'
+import MobileLayout from '../layouts/MobileLayout.astro'
+---
+
+<MobileLayout
+  title="Cupons | Daniel Berg"
+  description="Cupons de desconto e parcerias"
+  backButtonHref="/links"
+  className="container"
+>
+  <h1 class="title">Cupons de Desconto</h1>
+  <Link
+    href="https://husky.io?ref=nda3mdc"
+    title="Husky"
+    backgroundColor="#3dace2"
+    iconSrc="/assets/money_exchange.svg"
+    target="_blank"
+    rel="noopener"
+  />
+</MobileLayout>
+
+<style>
+  .container {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+</style>
