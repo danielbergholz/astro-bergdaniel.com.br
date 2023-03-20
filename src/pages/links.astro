@@ -1,83 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro'
 import Link from '../components/Link.astro'
+import MobileLayout from '../layouts/MobileLayout.astro'
 ---
 
-<Layout
+<MobileLayout
   title="Links | Daniel Berg"
   description="Links from YouTube, Instagram, Discord and GitHub"
+  className="container"
 >
-  <main class="container">
-    <a href="/" class="back">&larr;</a>
-    <img src="/assets/berg.png" alt="Berg logo" class="image" />
+  <img src="/assets/berg.png" alt="Berg logo" class="image" />
 
-    <Link
-      href="https://www.youtube.com/c/DanielBergholz/join"
-      title="Apoie o canal!"
-      backgroundColor="#59C28E"
-      iconSrc="/assets/thunder.svg"
-      target="_blank"
-      rel="noopener"
-    />
-    <Link
-      href="https://discord.gg/PkWraebbfY"
-      title="Discord"
-      backgroundColor="#7289D7"
-      iconSrc="/assets/discord.svg"
-      target="_blank"
-      rel="noopener"
-    />
-    <Link
-      href="https://www.youtube.com/c/DanielBergholz"
-      title="YouTube"
-      backgroundColor="#C71D1F"
-      iconSrc="/assets/youtube.svg"
-      target="_blank"
-      rel="noopener"
-    />
-    <Link
-      href="https://www.instagram.com/berg.dev/"
-      title="Instagram"
-      backgroundColor="#e23dcc"
-      iconSrc="/assets/instagram.svg"
-      target="_blank"
-      rel="noopener"
-    />
-    <Link
-      href="https://github.com/danielbergholz"
-      title="GitHub"
-      iconSrc="/assets/github.svg"
-      target="_blank"
-      rel="noopener"
-    />
-  </main>
-</Layout>
+  <Link
+    href="https://www.youtube.com/c/DanielBergholz/join"
+    title="Apoie o canal!"
+    backgroundColor="#59C28E"
+    iconSrc="/assets/thunder.svg"
+    target="_blank"
+    rel="noopener"
+  />
+  <Link
+    href="https://discord.gg/PkWraebbfY"
+    title="Discord"
+    backgroundColor="#7289D7"
+    iconSrc="/assets/discord.svg"
+    target="_blank"
+    rel="noopener"
+  />
+  <Link
+    href="https://www.youtube.com/c/DanielBergholz"
+    title="YouTube"
+    backgroundColor="#C71D1F"
+    iconSrc="/assets/youtube.svg"
+    target="_blank"
+    rel="noopener"
+  />
+  <Link
+    href="https://www.instagram.com/berg.dev/"
+    title="Instagram"
+    backgroundColor="#e23dcc"
+    iconSrc="/assets/instagram.svg"
+    target="_blank"
+    rel="noopener"
+  />
+  <Link
+    href="https://github.com/danielbergholz"
+    title="GitHub"
+    iconSrc="/assets/github.svg"
+    target="_blank"
+    rel="noopener"
+  />
+</MobileLayout>
 
 <style>
   .container {
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 20px;
-    max-width: 300px;
   }
 
   .image {
     border-radius: 10px;
     margin-bottom: 30px;
-  }
-
-  .back {
-    color: #fff;
-    font-size: 2rem;
-    align-self: flex-start;
-    margin-bottom: 10px;
-  }
-
-  @media screen and (max-width: 600px) {
-    .container {
-      margin: 10px auto;
-    }
   }
 </style>
