@@ -2,9 +2,10 @@
 export interface Props {
   title: string
   description: string
+  indexPage?: boolean
 }
 
-const { title, description } = Astro.props
+const { title, description, indexPage = false } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ const { title, description } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
-    <link rel="canonical" href="https://bergdaniel.com.br/" />
+    {indexPage && <link rel="canonical" href="https://bergdaniel.com.br/" />}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
