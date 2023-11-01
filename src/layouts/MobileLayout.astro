@@ -4,15 +4,15 @@ import Layout from './Layout.astro'
 export interface Props {
   title: string
   description: string
-  className?: string
+  class?: string
   backButtonHref?: string
 }
 
-const { title, description, className = '', backButtonHref = '/' } = Astro.props
+const { title, description, class: className = '', backButtonHref = '/', ...rest } = Astro.props
 ---
 
 <Layout title={title} description={description}>
-  <main class={`container ${className}`}>
+  <main class={`container ${className}`} {...rest}>
     <a href={backButtonHref} class="back">&larr;</a>
     <slot />
   </main>
