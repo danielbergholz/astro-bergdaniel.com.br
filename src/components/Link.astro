@@ -8,6 +8,7 @@ export interface Props extends AnchorProps {
   title: string
   href: string
   iconSrc?: string
+  color?: string
   backgroundColor?: string
 }
 
@@ -15,7 +16,8 @@ const {
   href,
   title,
   iconSrc,
-  backgroundColor = '#000',
+  color = "#fff",
+  backgroundColor = "#000",
   ...anchorProps
 } = Astro.props
 ---
@@ -29,7 +31,7 @@ const {
   </button>
 </a>
 
-<style define:vars={{ backgroundColor }}>
+<style define:vars={{ color, backgroundColor }}>
   .button {
     display: flex;
     align-items: center;
@@ -40,7 +42,7 @@ const {
     background-color: var(--backgroundColor);
     border: none;
     border-radius: 6px;
-    color: #fff;
+    color: var(--color);
   }
 
   @media screen and (max-width: 600px) {
