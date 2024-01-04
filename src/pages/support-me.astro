@@ -1,0 +1,41 @@
+---
+import Link from "../components/Link.astro"
+import MobileLayout from "../layouts/MobileLayout.astro"
+---
+
+<MobileLayout
+  title="Support me | Daniel Berg"
+  description="Support me"
+  backButtonHref="/links"
+  class="container"
+>
+  <h1 class="title">Support me</h1>
+
+  <Link
+    href="https://www.youtube.com/c/DanielBergholz/join"
+    title="YouTube"
+    backgroundColor="#C71D1F"
+    iconSrc="/assets/youtube.svg"
+    target="_blank"
+    rel="noopener"
+  />
+
+  <Link
+    href="/coupons"
+    title="Coupons"
+    backgroundColor="#3dace2"
+    iconSrc="/assets/money_bag.svg"
+  />
+</MobileLayout>
+
+<style>
+  .container {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+</style>
