@@ -14,11 +14,18 @@ const { title, description, indexPage = false } = Astro.props
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      property="og:image"
+      content="https://bergdaniel.com.br/assets/berg.png"
+    />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Daniel Bergholz" />
+    <meta property="og:title" content="Daniel Bergholz" />
     {indexPage && <link rel="canonical" href="https://bergdaniel.com.br/" />}
     <link rel="sitemap" href="/sitemap.xml" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="og:description" content={description} />
     <title>{title}</title>
     <script
       defer
