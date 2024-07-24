@@ -22,17 +22,19 @@ const {
 } = Astro.props
 ---
 
-<a href={href} {...anchorProps}>
-  <button class="button">
-    {iconSrc && <img src={iconSrc} alt="Social media link" />}
-    <h2>
-      {title}
-    </h2>
-  </button>
+<a href={href} aria-label={title} {...anchorProps} class="anchor">
+  {
+    iconSrc && (
+      <img src={iconSrc} alt="Social media link" width="35" height="35" />
+    )
+  }
+  <p class="text">
+    {title}
+  </p>
 </a>
 
 <style define:vars={{ color, backgroundColor }}>
-  .button {
+  .anchor {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,5 +45,11 @@ const {
     border: none;
     border-radius: 6px;
     color: var(--color);
+  }
+
+  .text {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 14px 0;
   }
 </style>

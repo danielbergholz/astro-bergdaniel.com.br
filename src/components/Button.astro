@@ -2,6 +2,7 @@
 type AnchorProps = {
   target?: string
   rel?: string
+  label?: string
 }
 
 export type Props = AnchorProps & {
@@ -10,21 +11,20 @@ export type Props = AnchorProps & {
   iconSrc?: string
 }
 
-const { href, title, iconSrc, ...anchorProps } = Astro.props
+const { href, title, iconSrc, label, ...anchorProps } = Astro.props
 ---
 
-<li class="link-card">
-  <a class="anchor" href={href} {...anchorProps}>
-    {iconSrc && <img src={iconSrc} alt="Button" />}
-    <h2 class="text">
+<div class="link-card">
+  <a class="anchor" href={href} aria-label={label} {...anchorProps}>
+    {iconSrc && <img src={iconSrc} alt="Button" width="26" height="26" />}
+    <p class="text">
       {title}
-    </h2>
+    </p>
   </a>
-</li>
+</div>
 
 <style>
   .link-card {
-    list-style: none;
     display: flex;
     align-items: center;
     padding: 0.25rem;
@@ -54,6 +54,7 @@ const { href, title, iconSrc, ...anchorProps } = Astro.props
   .text {
     margin: 0;
     font-size: 1.25rem;
+    font-weight: bold;
   }
 
   @media screen and (max-width: 600px) {

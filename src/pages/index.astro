@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Button from '../components/Button.astro'
+import Layout from "../layouts/Layout.astro"
+import Button from "../components/Button.astro"
 ---
 
 <Layout
@@ -9,30 +9,38 @@ import Button from '../components/Button.astro'
   description="Daniel Bergholz is a Senior Frontend Engineer and Content Creator"
 >
   <main class="container">
-    <div class="introduction">
+    <section class="introduction">
       <img
-        src="/assets/profile_picture.jpg"
+        src="/assets/profile_picture.webp"
         alt="Daniel Bergholz profile picture"
         class="image"
+        width="200"
+        height="200"
       />
       <h1 class="title">Hello <span>&#x1F44B;</span></h1>
-    </div>
+    </section>
 
     <h2 class="subtitle">
       My name is <span class="text-underline">Daniel Bergholz</span>, I'm a
       Senior Frontend Engineer and Content Creator from Brazil
     </h2>
 
-    <div class="links-container">
-      <Button href="/links" title="Links" iconSrc="/assets/link.svg" />
+    <nav class="links-container">
+      <Button
+        href="/links"
+        title="Links"
+        iconSrc="/assets/link.svg"
+        label="Check out Daniel Bergholz's links"
+      />
       <Button
         href="mailto:bergholz.daniel@gmail.com"
+        label="Send an email to Daniel Bergholz"
         iconSrc="/assets/email.svg"
         title="Contact"
         target="_blank"
         rel="noopener"
       />
-    </div>
+    </nav>
   </main>
 </Layout>
 
@@ -64,6 +72,7 @@ import Button from '../components/Button.astro'
   .image {
     border-radius: 50%;
     width: 200px;
+    height: 200px;
   }
 
   .links-container {
@@ -82,6 +91,7 @@ import Button from '../components/Button.astro'
 
     .image {
       width: 160px;
+      height: 160px;
     }
 
     .introduction {
