@@ -1,10 +1,10 @@
 ---
-interface AnchorProps {
+type AnchorProps = {
   target?: string
   rel?: string
 }
 
-export interface Props extends AnchorProps {
+export type Props = AnchorProps & {
   title: string
   href: string
   iconSrc?: string
